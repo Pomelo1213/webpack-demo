@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './source/index.coffee',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -25,6 +25,10 @@ module.exports = {
           "css-loader", // translates CSS into CommonJS
           "sass-loader" // compiles Sass to CSS, using Node Sass by default
         ]
+      },
+      {
+        test: /\.coffee$/,
+        use: ['coffee-loader']
       }
     ]
   }
